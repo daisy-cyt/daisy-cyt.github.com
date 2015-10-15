@@ -7,6 +7,24 @@
     <atom:link href="//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>作用域链与作用域对象</title>
+        <description>&lt;p&gt;var elems = document.getElementsByClassName(“myClass”), i;&lt;/p&gt;
+
+&lt;p&gt;for (i = 0; i &amp;lt; elems.length; i++) {
+  elems[i].addEventListener(“click”, function () {
+    this.innerHTML = i;
+  });
+}&lt;/p&gt;
+
+&lt;p&gt;为什么并不是1，2，3，结果都是3呢？因为作用域链是不会被复制的。每次函数调用只会往作用域链下面新增一个作用域对象。所以，如果在函数调用的过程当中对作用域链中的任何一个作用域对象的变量进行修改的话，那么同时作用域链中也拥有该作用域对象的函数对象也是能够访问到这个变化后的变量的。在上面的循环中创建了多个函数对象，所有的函数对象的[[scope]]都保存着对当前作用域对象的引用。而变量i正好就在当前作用域链中，所以循环每次对i的修改，对于每个函数对象都是能够看到的。&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 19 Sep 2015 03:28:19 +0800</pubDate>
+        <link>//jekyll/pixyll/2015/09/19/%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%AF%B9%E8%B1%A1/</link>
+        <guid isPermaLink="true">//jekyll/pixyll/2015/09/19/%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%AF%B9%E8%B1%A1/</guid>
+      </item>
+    
+      <item>
         <title>浅谈模块化</title>
         <description>&lt;p&gt;MD和CMD的区别，模块化的优点
 1. 对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible.&lt;/p&gt;
