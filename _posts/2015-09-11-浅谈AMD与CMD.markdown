@@ -6,13 +6,22 @@ summary:    AMD,  CMD到底怎么选？.
 categories: jekyll pixyll
 ---
 
-MD和CMD的区别，模块化的优点
-1. 对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible.
+ AMD和CMD的区别，模块化的优点  
 
-2. CMD 推崇依赖就近，AMD 推崇依赖前置。
-3. 对于依赖项加载，amd中需要执行完毕，cmd中只需要文件加载完毕，注意这时候的factory尚未执行，当使用require请求该模块时，factory才会执行，所以在性能上seajs逊于requirejs
-优点：
-1.灵活架构，焦点分离 
-2.方便模块间组合、分解 
-3.方便单个模块功能调试、升级 
-4.多人协作互不干扰
+
+* 对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。不过 RequireJS 从 2.0 开始也可以改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible.
+
+* CMD 推崇依赖就近，AMD 推崇依赖前置。
+
+* 对于依赖项加载，amd中需要执行完毕，cmd中只需要文件加载完毕，注意这时候的factory尚未执行，当使用require请求该模块时，factory才会执行，所以在性能上seajs逊于requirejs  
+
+ 模块化的优点：  
+
+* 灵活架构，焦点分离  
+ 
+* 方便模块间组合、分解  
+ 
+* 方便单个模块功能调试、升级  
+ 
+* 多人协作互不干扰  
+
